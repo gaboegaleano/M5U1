@@ -9,15 +9,38 @@
     </div>
 </div>
 <!--Novedades-->
-<div class="row my-5">
-    <div id="novedades" class="col-md-5 offset-md-2scroll_section">
+<div class="row my-3">
+    <div id="novedades" class="col-md-5 offset-md-2 scroll_section">
         <h2>Novedades</h2>
         <ul class="lista-novedades">
             {{#each novedades}}
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}"><img src="images/novedades01.jpg">{{titulo}}</a></li>
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{id}}"><img src="images/novedades01.jpg">{{titulo}}</a>
+            </li>
             {{/each}}
         </ul>
     </div>
+    <!-- Inicio Modal -->
+    {{#each novedades}}
+    <div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>{{subtitulo}}</h3>
+                    <p>{{detalle}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <!--Fin de Novedades-->
     <!--Abre carousel-->
     <div class="col-md-3 my-3">
         <div class="rounded py-5 testimonios">
@@ -65,27 +88,7 @@
         </div>
     </div>
 </div><!--Fin de Novedades y testimonios-->
-<!-- Inicio Modal -->
-{{#each novedades}}
-<div class="modal fade" id="exampleModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h1>
-                <h3>{{subtitulo}}</h3>
-                <p>{{detalle}}</p>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
-            </div>
-        </div>
-    </div>
-</div><!--Fin de Novedades-->
-{{/each}}
+
 
 
 <!-- Inicio Historia-->
